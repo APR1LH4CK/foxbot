@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "fact": "Foxes are the most widespread wild canids in the world, inhabiting every continent except Antarctica."
+  },
+  {
+    "id": 2,
+    "fact": "There are over 30 different species of fox, with the red fox (Vulpes vulpes) being the most common."
+  },
+  {
+    "id": 3,
+    "fact": "Despite being in the dog family (Canidae), foxes share many characteristics with cats, including vertical pupils and a similar stalking hunting style."
+  },
+  {
+    "id": 4,
+    "fact": "True foxes belong to the genus Vulpes. Other animals with 'fox' in their name, like the grey fox, belong to different genera."
+  },
+  {
+    "id": 5,
+    "fact": "Foxes can leap over 6 feet (2 metres) in the air."
+  },
+  {
+    "id": 6,
+    "fact": "Unlike most other canids, some fox species have partially retractable claws, which helps them climb."
+  },
+  {
+    "id": 7,
+    "fact": "Foxes are believed to be the first animals discovered to use the Earth's magnetic field to hunt. They can see the field as a 'ring of shadow' that helps them pinpoint prey in deep snow or thick vegetation."
+  },
+  {
+    "id": 8,
+    "fact": "A fox can hear a mouse squeak from 100 feet away and can even hear low-frequency sounds of animals digging underground."
+  },
+  {
+    "id": 9,
+    "fact": "In addition to the whiskers on their faces, foxes have vibrissae on their legs, which help them navigate in the dark."
+  },
+  {
+    "id": 10,
+    "fact": "A fox's tail, or 'brush,' is used for balance, as a warm cover in cold weather, and for communication."
+  },
+  {
+    "id": 11,
+    "fact": "Many red foxes have a white tip on their tail, a feature that helps them communicate with each other in low light."
+  },
+  {
+    "id": 12,
+    "fact": "While many foxes have amber-coloured eyes, their eye colour can also be brown or even blue in some cases."
+  },
+  {
+    "id": 13,
+    "fact": "Like cats and other canids, foxes walk on their toes, which allows for their silent, stealthy movements."
+  },
+  {
+    "id": 14,
+    "fact": "Foxes have a tapetum lucidum in their eyes, a reflective layer that enhances their vision in low-light conditions."
+  },
+  {
+    "id": 15,
+    "fact": "While they can be active during the day, foxes are primarily nocturnal or crepuscular (active at dawn and dusk)."
+  },
+  {
+    "id": 16,
+    "fact": "A fox's coat changes with the seasons, becoming thicker and denser in the winter for insulation and lighter in the summer."
+  },
+  {
+    "id": 17,
+    "fact": "Foxes have scent glands at the base of their tail and on their paws, which they use to mark their territory."
+  },
+  {
+    "id": 18,
+    "fact": "Foxes have a distinct musky odour, which is particularly strong during the breeding season."
+  },
+  {
+    "id": 19,
+    "fact": "Their long, narrow snout is an adaptation for foraging in small holes and crevices for prey."
+  },
+  {
+    "id": 20,
+    "fact": "Red foxes can run at speeds of up to 30 miles per hour (48 kilometres per hour)."
+  },
+  {
+    "id": 21,
+    "fact": "In the wild, the average lifespan of a fox is short, typically 2 to 4 years. In captivity, they can live for more than 10 years."
+  },
+  {
+    "id": 22,
+    "fact": "The largest fox species is the red fox, while the smallest is the fennec fox."
+  },
+  {
+    "id": 23,
+    "fact": "The fennec fox has disproportionately large ears that help dissipate heat in its desert habitat."
+  },
+  {
+    "id": 24,
+    "fact": "The Arctic fox has a white coat in the winter to blend in with the snow and a brown or grey coat in the summer."
+  },
+  {
+    "id": 25,
+    "fact": "The grey fox is one of the only canids capable of climbing trees, thanks to its strong, hooked claws."
+  },
+  {
+    "id": 26,
+    "fact": "Foxes are omnivores, meaning they eat a wide variety of foods, including small mammals, birds, reptiles, insects, fruits, and berries."
+  },
+  {
+    "id": 27,
+    "fact": "Unlike wolves, foxes are not pack hunters and typically hunt alone."
+  },
+  {
+    "id": 28,
+    "fact": "Foxes have a characteristic hunting pounce where they leap high into the air and bring their front paws down on their prey."
+  },
+  {
+    "id": 29,
+    "fact": "Foxes often cache excess food, burying it to eat later. They have an excellent memory for where they've stored their meals."
+  },
+  {
+    "id": 30,
+    "fact": "In urban environments, foxes have adapted to scavenging for food from rubbish bins and compost heaps."
+  },
+  {
+    "id": 31,
+    "fact": "A significant portion of a fox's diet, especially in some regions, can be made up of earthworms."
+  },
+  {
+    "id": 32,
+    "fact": "Foxes have a sweet tooth and are known to enjoy fruits like apples, blackberries, and cherries."
+  },
+  {
+    "id": 33,
+    "fact": "In the summer months, a large part of their diet can consist of insects like grasshoppers and beetles."
+  },
+  {
+    "id": 34,
+    "fact": "A single fox can eat thousands of rodents in a year, playing a crucial role in controlling their populations."
+  },
+  {
+    "id": 35,
+    "fact": "Foxes are opportunistic feeders and will eat almost anything they can find."
+  },
+  {
+    "id": 36,
+    "fact": "They use a slow, cat-like stalk to approach their prey before launching a final, swift attack."
+  },
+  {
+    "id": 37,
+    "fact": "Their incredible hearing allows them to locate prey moving under snow or soil."
+  },
+  {
+    "id": 38,
+    "fact": "Their adaptable diet is a key reason for their widespread success as a species."
+  },
+  {
+    "id": 39,
+    "fact": "Foxes will also feed on carrion (dead animals)."
+  },
+  {
+    "id": 40,
+    "fact": "Most of their hunting and foraging activities take place at night."
+  },
+  {
+    "id": 41,
+    "fact": "Foxes are highly vocal and have a wide range of calls, including barks, screams, howls, and chatters. They can produce up to 40 different vocalisations."
+  },
+  {
+    "id": 42,
+    "fact": "A series of guttural chattering sounds, known as 'gekkering,' is often heard during disputes."
+  },
+  {
+    "id": 43,
+    "fact": "The eerie, high-pitched scream of a vixen is most commonly heard during the mating season."
+  },
+  {
+    "id": 44,
+    "fact": "Foxes communicate extensively through body language, using their ears, tail, and posture to convey messages."
+  },
+  {
+    "id": 45,
+    "fact": "Urine and faeces are used to mark territorial boundaries and communicate with other foxes."
+  },
+  {
+    "id": 46,
+    "fact": "While often solitary, foxes can live in small family groups, known as a 'skulk' or 'leash' of foxes."
+  },
+  {
+    "id": 47,
+    "fact": "A typical fox family consists of a breeding pair (dog fox and vixen) and their offspring."
+  },
+  {
+    "id": 48,
+    "fact": "Sometimes, young from a previous litter will stay with their parents to help raise the next litter of kits."
+  },
+  {
+    "id": 49,
+    "fact": "Foxes are territorial animals and will defend their home range from other foxes."
+  },
+  {
+    "id": 50,
+    "fact": "Foxes are known to be playful, both with each other and with objects they find. They have been observed stealing golf balls to play with."
+  },
+  {
+    "id": 51,
+    "fact": "Within a family group, there is a clear dominance hierarchy."
+  },
+  {
+    "id": 52,
+    "fact": "Foxes will groom each other to strengthen social bonds."
+  },
+  {
+    "id": 53,
+    "fact": "Like dogs, foxes may wag their tails to express excitement or submission."
+  },
+  {
+    "id": 54,
+    "fact": "A submissive fox will lower its body, flatten its ears, and avert its gaze."
+  },
+  {
+    "id": 55,
+    "fact": "Foxes often form monogamous pairs for the breeding season, and some pairs may stay together for life."
+  },
+  {
+    "id": 56,
+    "fact": "The breeding season for most fox species is in the winter, typically from January to March."
+  },
+  {
+    "id": 57,
+    "fact": "The gestation period for a vixen is around 53 days."
+  },
+  {
+    "id": 58,
+    "fact": "Vixens give birth to their young, called kits or pups, in underground dens."
+  },
+  {
+    "id": 59,
+    "fact": "A litter of fox kits can range from one to eleven, with an average of four to five."
+  },
+  {
+    "id": 60,
+    "fact": "Fox kits are born blind, deaf, and toothless."
+  },
+  {
+    "id": 61,
+    "fact": "Newborn kits are covered in dark, fuzzy fur."
+  },
+  {
+    "id": 62,
+    "fact": "The vixen stays with her kits in the den for the first few weeks, while the male brings her food."
+  },
+  {
+    "id": 63,
+    "fact": "The dog fox plays an active role in raising the young, providing food for both the vixen and the kits."
+  },
+  {
+    "id": 64,
+    "fact": "Kits are weaned at around four to five weeks of age."
+  },
+  {
+    "id": 65,
+    "fact": "The kits begin to emerge from the den at about four to five weeks old."
+  },
+  {
+    "id": 66,
+    "fact": "The parents teach the kits how to hunt by bringing them live prey to practise on."
+  },
+  {
+    "id": 67,
+    "fact": "Young foxes typically leave their parents' territory in the autumn to establish their own."
+  },
+  {
+    "id": 68,
+    "fact": "Foxes reach sexual maturity at around 10 months of age."
+  },
+  {
+    "id": 69,
+    "fact": "Foxes typically have only one litter of kits per year."
+  },
+  {
+    "id": 70,
+    "fact": "Foxes may dig their own dens or enlarge the burrows of other animals like rabbits or badgers."
+  },
+  {
+    "id": 71,
+    "fact": "Fox dens often have multiple entrances to allow for a quick escape from predators."
+  },
+  {
+    "id": 72,
+    "fact": "Fox dens are also known as 'earths' or 'burrows'."
+  },
+  {
+    "id": 73,
+    "fact": "In cities, foxes may create dens under sheds, in basements, or in other sheltered urban spaces."
+  },
+  {
+    "id": 74,
+    "fact": "In many cultures, the fox is a symbol of cunning, trickery, and intelligence."
+  },
+  {
+    "id": 75,
+    "fact": "Foxes feature prominently in the folklore and mythology of many countries, often as clever characters."
+  },
+  {
+    "id": 76,
+    "fact": "The practice of hunting foxes with hounds has been a controversial topic for centuries."
+  },
+  {
+    "id": 77,
+    "fact": "Healthy foxes are generally not a threat to humans and will typically avoid contact."
+  },
+  {
+    "id": 78,
+    "fact": "Foxes have proven to be incredibly adaptable and have successfully colonised many urban and suburban areas."
+  },
+  {
+    "id": 79,
+    "fact": "Foxes can be carriers of rabies, although this is more common in some regions than others."
+  },
+  {
+    "id": 80,
+    "fact": "Sarcoptic mange, a skin disease caused by mites, can be a significant threat to fox populations."
+  },
+  {
+    "id": 81,
+    "fact": "By preying on rodents and rabbits, foxes can be beneficial to farmers."
+  },
+  {
+    "id": 82,
+    "fact": "However, they can also be a nuisance to farmers by preying on poultry and small livestock."
+  },
+  {
+    "id": 83,
+    "fact": "Feeding wild foxes can make them dependent on humans and lose their natural fear, which can lead to negative interactions."
+  },
+  {
+    "id": 84,
+    "fact": "A long-term experiment in Russia has successfully domesticated silver foxes, a colour morph of the red fox."
+  },
+  {
+    "id": 85,
+    "fact": "While some wild foxes can become tame, they are not domesticated animals."
+  },
+  {
+    "id": 86,
+    "fact": "A group of foxes is called a 'skulk' or a 'leash'."
+  },
+  {
+    "id": 87,
+    "fact": "A male fox is called a 'dog,' 'todd,' or 'reynard,' and a female is a 'vixen'."
+  },
+  {
+    "id": 88,
+    "fact": "The swift fox, native to North America, is one of the fastest canids and can reach speeds of over 30 mph."
+  },
+  {
+    "id": 89,
+    "fact": "The bat-eared fox, an African species, has enormous ears that it uses to locate termites, its primary food source."
+  },
+  {
+    "id": 90,
+    "fact": "Found in South America, the crab-eating fox has a diet that includes a significant amount of crabs."
+  },
+  {
+    "id": 91,
+    "fact": "The island fox, found on the Channel Islands of California, is one of the smallest fox species in the world."
+  },
+  {
+    "id": 92,
+    "fact": "The corsac fox, from central Asia, is known for its ability to survive in arid environments and can go for long periods without water."
+  },
+  {
+    "id": 93,
+    "fact": "The Tibetan sand fox has a distinctively square face and is found on the Tibetan Plateau."
+  },
+  {
+    "id": 94,
+    "fact": "The red fox is the suspected source of the mysterious 'Wow!' signal, a strong narrowband radio signal detected in 1977, due to its vocalisation patterns. While not confirmed, it remains a fascinating theory."
+  },
+  {
+    "id": 95,
+    "fact": "Foxes do not hibernate and remain active throughout the winter."
+  },
+  {
+    "id": 96,
+    "fact": "Foxes are capable swimmers."
+  },
+  {
+    "id": 97,
+    "fact": "They often travel along the same routes, creating visible paths in their territory."
+  },
+  {
+    "id": 98,
+    "fact": "The tail of a red fox can be up to two-thirds the length of its head and body."
+  },
+  {
+    "id": 99,
+    "fact": "Natural predators of foxes include eagles, coyotes, wolves, bears, and mountain lions."
+  },
+  {
+    "id": 100,
+    "fact": "Their intelligence, adaptability, and resourcefulness have allowed foxes to thrive in a wide range of environments around the world."
+  }
+]
