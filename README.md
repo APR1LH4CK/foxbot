@@ -4,7 +4,7 @@ i really liek foxes
 
 to set it up stuff is pretty easy 
 
-```toml
+```
 [discord]
 token = "<token>"
 application_id = <app id>
