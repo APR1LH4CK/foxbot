@@ -43,12 +43,18 @@ async fn on_error(error: poise::FrameworkError<'_, Data, Error>) {
 }
 
 async fn on_ready(
-    _ctx: &serenity::Context,
+    ctx: &serenity::Context,
     ready: &serenity::Ready,
     _framework: &poise::Framework<Data, Error>,
     _data: &Data,
 ) -> Result<(), Error> {
     tracing::info!("{} is connected!", ready.user.name);
+    
+    ctx.set_presence(
+        Some(serenity::ActivityData::watching("videos of foxes")),
+        serenity::OnlineStatus::Idle,
+    );
+    
     Ok(())
 }
 
