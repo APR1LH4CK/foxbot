@@ -2,7 +2,7 @@ mod cmd;
 mod config;
 mod util;
 
-use std::sync::Arc;
+use std::{collections::HashMap, path::Path, sync::Arc};
 
 use config::Config;
 use poise::serenity_prelude as serenity;
@@ -14,6 +14,9 @@ type Context<'a> = poise::Context<'a, Data, Error>;
 #[derive(Clone)]
 pub struct Data {
     pub config: Arc<Config>,
+    pub fox_images: Arc<Vec<String>>,
+    pub fox_image_data: Arc<HashMap<String, Vec<u8>>>,
+    pub facts: Arc<Vec<serde_json::Value>>,
 }
 
 async fn on_error(error: poise::FrameworkError<'_, Data, Error>) {
@@ -49,13 +52,67 @@ async fn on_ready(
     _data: &Data,
 ) -> Result<(), Error> {
     tracing::info!("{} is connected!", ready.user.name);
-    
+
     ctx.set_presence(
         Some(serenity::ActivityData::watching("videos of foxes")),
         serenity::OnlineStatus::Idle,
     );
-    
+
     Ok(())
+}
+
+async fn load_fox_images() -> Result<(Vec<String>, HashMap<String, Vec<u8>>), Error> {
+    let images_dir = Path::new("images/foxes");
+
+    if !images_dir.exists() {
+        tracing::warn!("Fox images directory not found!");
+        return Ok((Vec::new(), HashMap::new()));
+    }
+
+    let mut entries = tokio::fs::read_dir(images_dir).await?;
+    let mut fox_images = Vec::new();
+    let mut fox_image_data = HashMap::new();
+
+    while let Some(entry) = entries.next_entry().await? {
+        let path = entry.path();
+        if path.is_file() && path.extension().and_then(|s| s.to_str()) == Some("jpg") {
+            if let Some(file_name) = path.file_name().and_then(|s| s.to_str()) {
+                match tokio::fs::read(&path).await {
+                    Ok(data) => {
+                        fox_images.push(file_name.to_string());
+                        fox_image_data.insert(file_name.to_string(), data);
+                        tracing::debug!("Loaded image: {}", file_name);
+                    }
+                    Err(e) => {
+                        tracing::warn!("Failed to load image {}: {}", file_name, e);
+                    }
+                }
+            }
+        }
+    }
+
+    tracing::info!("Loaded {} fox images into memory", fox_images.len());
+    Ok((fox_images, fox_image_data))
+}
+
+async fn load_facts() -> Result<Vec<serde_json::Value>, Error> {
+    tracing::info!("Loading fox facts...");
+    match tokio::fs::read_to_string("facts.json").await {
+        Ok(data) => match serde_json::from_str::<Vec<serde_json::Value>>(&data) {
+            Ok(facts) => {
+                tracing::info!("Loaded {} fox facts into memory", facts.len());
+                Ok(facts)
+            }
+            Err(e) => {
+                tracing::warn!("Failed to parse facts.json: {}", e);
+                Ok(Vec::new())
+            }
+        },
+        Err(e) => {
+            tracing::warn!("Failed to load facts.json: {}", e);
+            Ok(Vec::new())
+        }
+    }
 }
 
 #[tokio::main]
@@ -70,8 +127,16 @@ async fn main() -> Result<(), Error> {
 
     tracing::info!("Starting foxbot...");
 
+    let (fox_images_list, fox_image_data_map) = load_fox_images().await?;
+    let fox_images = Arc::new(fox_images_list);
+    let fox_image_data = Arc::new(fox_image_data_map);
+    let facts = Arc::new(load_facts().await?);
+
     let data = Data {
         config: config.clone(),
+        fox_images,
+        fox_image_data,
+        facts,
     };
 
     let intents =

@@ -1,7 +1,6 @@
 use poise::serenity_prelude::CreateEmbed;
 use rand::seq::IndexedRandom;
 use serde::{Deserialize, Serialize};
-use tokio::fs;
 
 use crate::{Context, Error, util::embed};
 
@@ -13,32 +12,11 @@ struct FoxFact {
 
 #[poise::command(slash_command)]
 pub async fn fact(ctx: Context<'_>) -> Result<(), Error> {
-    ctx.defer().await?;
-    
-    let facts_data = match fs::read_to_string("facts.json").await {
-        Ok(data) => data,
-        Err(_) => {
-            let embed = embed::create_error_embed("Error", "Could not load fox facts file!");
-            ctx.send(poise::CreateReply::default().embed(embed))
-                .await?;
-            return Ok(());
-        }
-    };
-
-    let facts: Vec<FoxFact> = match serde_json::from_str(&facts_data) {
-        Ok(facts) => facts,
-        Err(_) => {
-            let embed = embed::create_error_embed("Error", "Could not parse fox facts data!");
-            ctx.send(poise::CreateReply::default().embed(embed))
-                .await?;
-            return Ok(());
-        }
-    };
+    let facts = &ctx.data().facts;
 
     if facts.is_empty() {
         let embed = embed::create_error_embed("Error", "No fox facts available!");
-        ctx.send(poise::CreateReply::default().embed(embed))
-            .await?;
+        ctx.send(poise::CreateReply::default().embed(embed)).await?;
         return Ok(());
     }
 
@@ -49,7 +27,10 @@ pub async fn fact(ctx: Context<'_>) -> Result<(), Error> {
             .ok_or("Failed to select random fact")?
     };
 
-    let embed = create_fact_embed(&selected_fact.fact, selected_fact.id);
+    let fact_text = selected_fact["fact"].as_str().unwrap_or("Unknown fact");
+    let fact_id = selected_fact["id"].as_u64().unwrap_or(0) as u32;
+
+    let embed = create_fact_embed(fact_text, fact_id);
 
     ctx.send(poise::CreateReply::default().embed(embed)).await?;
 
