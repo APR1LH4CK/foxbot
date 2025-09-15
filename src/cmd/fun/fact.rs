@@ -1,8 +1,7 @@
-use std::fs;
-
 use poise::serenity_prelude::CreateEmbed;
 use rand::seq::IndexedRandom;
 use serde::{Deserialize, Serialize};
+use tokio::fs;
 
 use crate::{Context, Error, util::embed};
 
@@ -14,11 +13,13 @@ struct FoxFact {
 
 #[poise::command(slash_command)]
 pub async fn fact(ctx: Context<'_>) -> Result<(), Error> {
-    let facts_data = match fs::read_to_string("facts.json") {
+    ctx.defer().await?;
+    
+    let facts_data = match fs::read_to_string("facts.json").await {
         Ok(data) => data,
         Err(_) => {
             let embed = embed::create_error_embed("Error", "Could not load fox facts file!");
-            ctx.send(poise::CreateReply::default().embed(embed).ephemeral(true))
+            ctx.send(poise::CreateReply::default().embed(embed))
                 .await?;
             return Ok(());
         }
@@ -28,7 +29,7 @@ pub async fn fact(ctx: Context<'_>) -> Result<(), Error> {
         Ok(facts) => facts,
         Err(_) => {
             let embed = embed::create_error_embed("Error", "Could not parse fox facts data!");
-            ctx.send(poise::CreateReply::default().embed(embed).ephemeral(true))
+            ctx.send(poise::CreateReply::default().embed(embed))
                 .await?;
             return Ok(());
         }
@@ -36,7 +37,7 @@ pub async fn fact(ctx: Context<'_>) -> Result<(), Error> {
 
     if facts.is_empty() {
         let embed = embed::create_error_embed("Error", "No fox facts available!");
-        ctx.send(poise::CreateReply::default().embed(embed).ephemeral(true))
+        ctx.send(poise::CreateReply::default().embed(embed))
             .await?;
         return Ok(());
     }

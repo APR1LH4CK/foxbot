@@ -1,27 +1,31 @@
-use std::{fs, path::Path};
+use std::path::Path;
 
 use poise::serenity_prelude::{CreateAttachment, CreateEmbed};
 use rand::prelude::*;
+use tokio::fs;
 
 use crate::{Context, Error, util::embed};
+
 #[poise::command(slash_command)]
 pub async fn fox(ctx: Context<'_>) -> Result<(), Error> {
+    ctx.defer().await?;
+    
     let images_dir = Path::new("images/foxes");
 
     if !images_dir.exists() {
         let embed = embed::create_error_embed("Error", "Fox images directory not found!");
-        ctx.send(poise::CreateReply::default().embed(embed).ephemeral(true))
+        ctx.send(poise::CreateReply::default().embed(embed))
             .await?;
         return Ok(());
     }
 
-    let entries =
-        fs::read_dir(images_dir).map_err(|e| format!("Failed to read images directory: {}", e))?;
+    let mut entries = fs::read_dir(images_dir)
+        .await
+        .map_err(|e| format!("Failed to read images directory: {}", e))?;
 
     let mut fox_images = Vec::new();
 
-    for entry in entries {
-        let entry = entry.map_err(|e| format!("Failed to read directory entry: {}", e))?;
+    while let Some(entry) = entries.next_entry().await.map_err(|e| format!("Failed to read directory entry: {}", e))? {
         let path = entry.path();
 
         if path.is_file() && path.extension().and_then(|s| s.to_str()) == Some("jpg") {
@@ -33,7 +37,7 @@ pub async fn fox(ctx: Context<'_>) -> Result<(), Error> {
 
     if fox_images.is_empty() {
         let embed = embed::create_error_embed("Error", "No fox images found in the directory!");
-        ctx.send(poise::CreateReply::default().embed(embed).ephemeral(true))
+        ctx.send(poise::CreateReply::default().embed(embed))
             .await?;
         return Ok(());
     }
@@ -50,8 +54,9 @@ pub async fn fox(ctx: Context<'_>) -> Result<(), Error> {
 
     let image_path = images_dir.join(&selected_image);
 
-    let image_data =
-        fs::read(&image_path).map_err(|e| format!("Failed to read image file: {}", e))?;
+    let image_data = fs::read(&image_path)
+        .await
+        .map_err(|e| format!("Failed to read image file: {}", e))?;
 
     let attachment = CreateAttachment::bytes(image_data, selected_image.clone());
 
